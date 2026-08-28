@@ -1,0 +1,1 @@
+window.RECORDS=[{"bil":"1","ppd":"Ranau","school":"Sekolah Menengah Kebangsaan Mat Salleh","program":"Majlis Apresiasi dan Tamat Pengajian Tingkatan Enam","purpose":"Perasmi","date":"07 April 2026","vip":"YB Datuk Seri Panglima Haji Masidi bin Manjun","category":"ADUN","month":"Januari"}];
