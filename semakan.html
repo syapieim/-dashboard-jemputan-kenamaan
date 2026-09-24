@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b2d5c">
+<title>Semakan Permohonan Undangan Kenamaan | JPN Sabah</title>
+<script src="data0.js"></script>
+<script src="data1.js"></script>
+<script src="data2.js"></script>
+<script src="data3.js"></script>
+<script src="data4.js"></script>
+<script src="data5.js"></script>
+<script src="data6.js"></script>
+<script src="data7.js"></script>
+<script src="data8.js"></script>
+<script src="data9.js"></script>
+<style>
+:root{--navy:#0b2d5c;--blue:#1f63b5;--cyan:#eaf4ff;--ink:#172033;--muted:#667085;--line:#dbe4ef;--bg:#f5f8fc;--green:#16803c;--greenbg:#eaf8ef;--amber:#a15c00;--amberbg:#fff4df;--red:#b42318;--redbg:#fff0ee}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:linear-gradient(180deg,#eef5fd 0,#f8fafc 260px);color:var(--ink)}
+.top{background:linear-gradient(135deg,var(--navy),#164a86);color:#fff;padding:34px 20px 70px}.wrap{width:min(1100px,calc(100% - 28px));margin:auto}.brand{font-size:12px;font-weight:800;letter-spacing:.13em;opacity:.9}.top h1{font-size:clamp(26px,4vw,40px);line-height:1.08;margin:16px 0 8px}.top p{margin:0;opacity:.85;max-width:700px;line-height:1.55}
+.card{background:#fff;border:1px solid rgba(219,228,239,.85);border-radius:18px;box-shadow:0 16px 40px rgba(23,43,77,.09)}.search-card{margin-top:-38px;padding:22px}.search-row{display:grid;grid-template-columns:1fr auto;gap:12px}.field label{display:block;font-size:13px;font-weight:800;margin-bottom:8px}.field input{width:100%;height:50px;border:1px solid #cfd9e6;border-radius:12px;padding:0 15px;font-size:16px;outline:none;transition:.2s}.field input:focus{border-color:#4f8ed5;box-shadow:0 0 0 4px rgba(31,99,181,.1)}button,.link-btn{height:50px;border:0;border-radius:12px;padding:0 20px;font-size:14px;font-weight:800;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}.search-btn{background:var(--blue);color:#fff}.search-btn:hover{filter:brightness(.96)}.subrow{display:flex;gap:10px;align-items:center;justify-content:space-between;margin-top:12px;flex-wrap:wrap}.hint{font-size:12px;color:var(--muted)}.back{height:36px;padding:0 12px;background:#eef3f8;color:var(--navy)}
+.summary{display:none;margin:20px 0 0;padding:18px 20px;align-items:center;justify-content:space-between;gap:12px}.summary.show{display:flex}.summary strong{font-size:22px;color:var(--navy)}.summary span{font-size:13px;color:var(--muted)}
+.results{margin:18px 0 36px;overflow:hidden}.results-head{padding:18px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;align-items:center}.results-head h2{font-size:16px;margin:0}.count{font-size:12px;background:var(--cyan);color:var(--blue);padding:6px 9px;border-radius:999px;font-weight:800}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:760px}th,td{padding:15px 18px;border-bottom:1px solid #edf1f5;text-align:left;vertical-align:top}th{font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:#617084;background:#f8fafc}td{font-size:14px;line-height:1.45}.school{font-weight:800;color:var(--navy);min-width:220px}.date{white-space:nowrap;font-weight:700}.status{display:inline-flex;padding:6px 9px;border-radius:999px;font-size:12px;font-weight:800;white-space:nowrap}.s-green{color:var(--green);background:var(--greenbg)}.s-amber{color:var(--amber);background:var(--amberbg)}.s-red{color:var(--red);background:var(--redbg)}.s-gray{color:#475467;background:#f2f4f7}.empty{padding:46px 20px;text-align:center;color:var(--muted)}.empty .icon{font-size:34px;margin-bottom:10px}.footer{text-align:center;color:#7b8794;font-size:12px;padding:10px 14px 30px}
+@media(max-width:640px){.top{padding-top:26px}.search-card{padding:16px}.search-row{grid-template-columns:1fr}.search-btn{width:100%}.summary.show{align-items:flex-start;flex-direction:column}.results-head{align-items:flex-start;flex-direction:column}th,td{padding:13px 14px}}
+</style>
+</head>
+<body>
+<section class="top">
+  <div class="wrap">
+    <div class="brand">JABATAN PENDIDIKAN NEGERI SABAH</div>
+    <h1>Semakan Permohonan<br>Undangan Kenamaan</h1>
+    <p>Masukkan nama sekolah atau institusi untuk melihat rekod program dan status permohonan yang terdapat dalam pangkalan data dashboard.</p>
+  </div>
+</section>
+
+<main class="wrap">
+  <section class="card search-card">
+    <div class="search-row">
+      <div class="field">
+        <label for="schoolSearch">Nama Sekolah / Institusi</label>
+        <input id="schoolSearch" list="schoolList" autocomplete="off" placeholder="Contoh: Sekolah Menengah Kebangsaan..." aria-label="Nama sekolah atau institusi">
+        <datalist id="schoolList"></datalist>
+      </div>
+      <button class="search-btn" id="searchBtn">Semak Permohonan</button>
+    </div>
+    <div class="subrow">
+      <div class="hint">Carian tidak sensitif kepada huruf besar/kecil. Anda juga boleh menaip sebahagian nama sekolah.</div>
+      <a class="link-btn back" href="index.html">← Dashboard Analisis</a>
+    </div>
+  </section>
+
+  <section class="card summary" id="summary">
+    <div><span>Sekolah / institusi ditemui</span><br><strong id="summarySchool">—</strong></div>
+    <div><span>Jumlah rekod</span><br><strong id="summaryCount">0</strong></div>
+  </section>
+
+  <section class="card results">
+    <div class="results-head">
+      <h2>Hasil Semakan</h2>
+      <div class="count" id="resultCount">0 rekod</div>
+    </div>
+    <div id="resultArea" class="empty">
+      <div class="icon">⌕</div>
+      Masukkan nama sekolah untuk memulakan semakan.
+    </div>
+  </section>
+</main>
+
+<div class="footer">Sumber data: Dashboard Analisis Undangan Kenamaan JPN Sabah 2026</div>
+
+<script>
+(function(){
+  var rows=(window.RD||[]).map(function(x){return{ppd:x[0],school:x[1],program:x[2],purpose:x[3],date:x[4],vip:x[5],category:x[6],position:x[7],month:x[8],status:x[9]};});
+  var input=document.getElementById('schoolSearch');
+  var list=document.getElementById('schoolList');
+  var area=document.getElementById('resultArea');
+  var count=document.getElementById('resultCount');
+  var summary=document.getElementById('summary');
+  var summarySchool=document.getElementById('summarySchool');
+  var summaryCount=document.getElementById('summaryCount');
+
+  function norm(s){return String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();}
+  function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(m){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m];});}
+  function statusClass(s){var n=norm(s);if(n.indexOf('tiada halangan')>-1||n.indexOf('lulus')>-1||n.indexOf('selesai')>-1)return's-green';if(n.indexOf('tidak')>-1||n.indexOf('tolak')>-1||n.indexOf('gagal')>-1)return's-red';if(n.indexOf('proses')>-1||n.indexOf('semakan')>-1||n.indexOf('tunggu')>-1||n.indexOf('draf')>-1)return's-amber';return's-gray';}
+
+  var schools=[].concat(rows.map(function(r){return r.school;})).filter(Boolean).filter(function(v,i,a){return a.indexOf(v)===i;}).sort(function(a,b){return a.localeCompare(b,'ms');});
+  schools.forEach(function(s){var o=document.createElement('option');o.value=s;list.appendChild(o);});
+
+  function render(){
+    var q=norm(input.value);
+    if(!q){summary.classList.remove('show');count.textContent='0 rekod';area.className='empty';area.innerHTML='<div class="icon">⌕</div>Masukkan nama sekolah untuk memulakan semakan.';return;}
+    var exact=schools.find(function(s){return norm(s)===q;});
+    var result=rows.filter(function(r){return exact?norm(r.school)===q:norm(r.school).indexOf(q)>-1;});
+    count.textContent=result.length+' rekod';
+    if(!result.length){summary.classList.remove('show');area.className='empty';area.innerHTML='<div class="icon">∅</div>Tiada rekod ditemui untuk carian tersebut.';return;}
+    var foundSchools=[].concat(result.map(function(r){return r.school;})).filter(function(v,i,a){return a.indexOf(v)===i;});
+    summary.classList.add('show');
+    summarySchool.textContent=foundSchools.length===1?foundSchools[0]:foundSchools.length+' sekolah / institusi';
+    summaryCount.textContent=result.length;
+    area.className='table-wrap';
+    var html='<table><thead><tr><th>Nama Sekolah (Alamat 1)</th><th>Nama Program</th><th>Tarikh Program</th><th>Status Permohonan</th></tr></thead><tbody>';
+    result.forEach(function(r){html+='<tr><td class="school">'+esc(r.school)+'</td><td>'+esc(r.program)+'</td><td class="date">'+esc(r.date)+'</td><td><span class="status '+statusClass(r.status)+'">'+esc(r.status||'Tidak dinyatakan')+'</span></td></tr>';});
+    html+='</tbody></table>';
+    area.innerHTML=html;
+  }
+
+  document.getElementById('searchBtn').addEventListener('click',render);
+  input.addEventListener('keydown',function(e){if(e.key==='Enter')render();});
+  input.addEventListener('change',function(){if(input.value)render();});
+})();
+</script>
+</body>
+</html>
