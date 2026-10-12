@@ -71,7 +71,7 @@
 
 <script>
 (function(){
-  var rows=(window.RD||[]).map(function(x){return{ppd:x[0],school:x[1],program:x[2],purpose:x[3],date:x[4],vip:x[5],category:x[6],position:x[7],month:x[8],status:x[9]};});
+  var rows=(window.RD||[]).map(function(x){return{ppd:x[0],school:x[1],address:x[10]||x[1],program:x[2],purpose:x[3],date:x[4],vip:x[5],category:x[6],position:x[7],month:x[8],status:x[9]};});
   var input=document.getElementById('schoolSearch');
   var list=document.getElementById('schoolList');
   var area=document.getElementById('resultArea');
@@ -100,7 +100,7 @@
     summaryCount.textContent=result.length;
     area.className='table-wrap';
     var html='<table><thead><tr><th>Nama Sekolah (Alamat 1)</th><th>Nama Program</th><th>Tarikh Program</th><th>Status Permohonan</th></tr></thead><tbody>';
-    result.forEach(function(r){html+='<tr><td class="school">'+esc(r.school)+'</td><td>'+esc(r.program)+'</td><td class="date">'+esc(r.date)+'</td><td><span class="status '+statusClass(r.status)+'">'+esc(r.status||'Tidak dinyatakan')+'</span></td></tr>';});
+    result.forEach(function(r){html+='<tr><td class="school">'+esc(r.address)+'</td><td>'+esc(r.program)+'</td><td class="date">'+esc(r.date)+'</td><td><span class="status '+statusClass(r.status)+'">'+esc(r.status||'Tidak dinyatakan')+'</span></td></tr>';});
     html+='</tbody></table>';
     area.innerHTML=html;
   }
