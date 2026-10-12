@@ -1,0 +1,10 @@
+KEMASKINI 12 OKTOBER 2026
+Jumlah rekod: 579
+Sumber: Jemputan Kenamaan (5).xlsx, sheet pertama.
+
+Gantikan data0.js hingga data9.js dalam root repo GitHub.
+Baris data: [PPD, sekolah, program, tujuan, tarikh program, VIP, kategori, jawatan, bulan, status, ALAMAT 1].
+
+Dalam index.html tukar paparan tempoh kepada JANUARI – OKTOBER dan tarikh kemaskini kepada 12 Oktober 2026.
+Dalam app.js tambah Oktober dalam MONTHS sebelum Tidak dinyatakan dan ubah MONTHS.slice(0,9) kepada MONTHS.slice(0,10).
+Dalam semakan.html, gunakan r.address daripada x[10] untuk paparan Nama Sekolah (Alamat 1).
